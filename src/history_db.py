@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 import sqlite3
 import time
+from contextlib import contextmanager
 from datetime import datetime
 from typing import Iterable
 
@@ -12,13 +13,21 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DB_PATH = ROOT / "data" / "runtime" / "crowdflow_v6.sqlite"
 
 
-def _connect(db_path: str | Path = DEFAULT_DB_PATH) -> sqlite3.Connection:
+@contextmanager
+def _connect(db_path: str | Path = DEFAULT_DB_PATH):
     path = Path(db_path)
     path.parent.mkdir(parents=True, exist_ok=True)
     con = sqlite3.connect(path, timeout=10.0)
-    con.execute("PRAGMA journal_mode=WAL")
-    con.execute("PRAGMA synchronous=NORMAL")
-    return con
+    try:
+        con.execute("PRAGMA journal_mode=WAL")
+        con.execute("PRAGMA synchronous=NORMAL")
+        yield con
+        con.commit()
+    except Exception:
+        con.rollback()
+        raise
+    finally:
+        con.close()
 
 
 def init_db(db_path: str | Path = DEFAULT_DB_PATH) -> None:
