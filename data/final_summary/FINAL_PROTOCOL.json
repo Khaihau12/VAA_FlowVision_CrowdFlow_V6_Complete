@@ -1,0 +1,70 @@
+{
+  "project_branch": "WILDTRACK multi-camera passenger-flow reliability",
+  "status": "Experimental WILDTRACK branch complete",
+  "camera_configurations": {
+    "Pair12": [
+      "Cam1",
+      "Cam2"
+    ],
+    "Pair34": [
+      "Cam3",
+      "Cam4"
+    ],
+    "Pair56": [
+      "Cam5",
+      "Cam6"
+    ],
+    "Cam7": [
+      "Cam7"
+    ]
+  },
+  "split": {
+    "development": 240,
+    "validation": 80,
+    "held_out_test": 80
+  },
+  "base_model": "YOLO11n pretrained + ByteTrack reference pipeline",
+  "fusion_reference": "Hungarian ground-plane association <=100 cm + equal averaging for matched cross-camera observations",
+  "robustness": {
+    "frame_observation_dropout": [
+      "0%",
+      "10%",
+      "20%",
+      "30%",
+      "40%"
+    ],
+    "detection_loss": [
+      "0%",
+      "10%",
+      "20%",
+      "30%",
+      "40%"
+    ],
+    "synchronization_shift_primary_seconds": [
+      -2.0,
+      -1.0,
+      -0.5,
+      0.0,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "synchronization_shift_exploratory_excluded_from_primary": [
+      -1.5,
+      1.5
+    ]
+  },
+  "zone_definition": "Generic PCA-based Zone A/B/C fitted on Development + Validation GT only",
+  "tracking": "Validation-selected constant-velocity Hungarian ground tracker",
+  "entry_exit": "Internal zone transitions only; track birth/death excluded",
+  "dwell": "Complete internal visits only; censored visits excluded",
+  "flow": "One directed source-zone -> destination-zone transition counted once using ENTRY event stream",
+  "test_tuning": false,
+  "important_interpretation_rules": [
+    "Raw occupancy-error correlation must not be interpreted without crowd-size control.",
+    "Ground MAE must be interpreted with Recall/F1.",
+    "Dwell MAE is conditional on matched complete visits.",
+    "Total flow count alone is insufficient; direction composition must also be evaluated.",
+    "Generic WILDTRACK zones must not be assigned airport semantics."
+  ]
+}

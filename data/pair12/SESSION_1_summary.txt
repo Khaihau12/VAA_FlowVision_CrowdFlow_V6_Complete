@@ -1,0 +1,25 @@
+WILDTRACK SESSION 1 — CAM1 + CAM2
+======================================================================
+
+Cam1 = CVLab1 / views[0]
+Cam2 = CVLab2 / views[1]
+Device = CPU
+
+Development = 240
+Validation  = 80
+Test        = 80
+
+FINAL TEST
+split    system   TP  FP  FN  ground_precision  ground_recall  ground_f1  ground_MAE_cm  ground_RMSE_cm  occupancy_MAE  occupancy_RMSE  occupancy_bias  occupancy_WAPE  mean_pred_occupancy  mean_GT_occupancy
+ test      Cam1  623  41 985          0.938253       0.387438   0.548415      16.752124       19.954091        11.8000       12.897674        -11.8000        0.587065               8.3000               20.1
+ test      Cam2  651  48 957          0.931330       0.404851   0.564369      36.821369       42.597040        11.3625       12.289731        -11.3625        0.565299               8.7375               20.1
+ test Cam1+Cam2 1068 138 540          0.885572       0.664179   0.759062      25.728143       32.171276         5.0750        6.397265         -5.0250        0.252488              15.0750               20.1
+
+FUSION IMPROVEMENTS
+       metric  improvement_vs_best_single_pct
+Occupancy MAE                       55.335534
+    Ground F1                       34.497362
+Ground Recall                       64.055300
+   Ground MAE                      -53.581376
+
+Runtime = 6.06 minutes

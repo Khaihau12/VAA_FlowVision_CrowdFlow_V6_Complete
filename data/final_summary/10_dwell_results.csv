@@ -1,0 +1,4 @@
+pair,GT_complete_visits,Pred_complete_visits,Matched_complete_visits,FP_visits,FN_visits,Visit_Precision,Visit_Recall,Visit_F1,Dwell_MAE_seconds,Dwell_RMSE_seconds,Dwell_Median_AE_seconds,Dwell_Bias_seconds,Dwell_WAPE,Entry_Timing_MAE_seconds,Exit_Timing_MAE_seconds,Matched_GT_mean_dwell_seconds,Matched_Pred_mean_dwell_seconds,Dwell_Pearson_r
+Pair12,9,13,3,10,6,0.2307692307692307,0.3333333333333333,0.2727272727272727,0.5,0.5,0.5,0.1666666666666666,0.044776119402985,0.1666666666666666,0.3333333333333333,11.166666666666666,11.333333333333334,0.917662935482247
+Pair34,9,1,0,1,9,0.0,0.0,0.0,,,,,,,,,,
+Pair56,9,18,2,16,7,0.1111111111111111,0.2222222222222222,0.1481481481481481,0.5,0.5,0.5,0.0,0.0476190476190476,0.25,0.25,10.5,10.5,

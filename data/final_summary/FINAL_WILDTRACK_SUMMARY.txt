@@ -1,0 +1,45 @@
+WILDTRACK — FINAL ALL RESULTS SUMMARY
+==============================================================================================================
+
+EXPERIMENT STATUS
+-----------------
+ id                          experiment   status                                                                        primary_source
+  1      Single / Multi-camera baseline COMPLETE                                                          final_system_performance.csv
+  2 Controlled camera-error correlation COMPLETE /kaggle/working/CONTROLLED_ERROR_CORRELATION/controlled_error_correlation_summary.csv
+  3          Camera observation dropout COMPLETE                     /kaggle/working/FRAME_DROP_ROBUSTNESS/frame_drop_seed_results.csv
+  4               Synchronization shift COMPLETE                          /kaggle/working/SYNC_SHIFT_ROBUSTNESS/sync_shift_results.csv
+  5           Controlled detection loss COMPLETE             /kaggle/working/DETECTION_LOSS_ROBUSTNESS/detection_loss_seed_results.csv
+  6                   Robustness master COMPLETE                                               rebuilt from raw robustness experiments
+  7            Fusion-method comparison COMPLETE                 /kaggle/working/FUSION_METHOD_COMPARISON/fusion_paper_ready_table.csv
+  8           Zone analysis / occupancy COMPLETE                                                            zone_occupancy_summary.csv
+  9     Global temporal ground tracking COMPLETE                                                             test_tracking_metrics.csv
+ 10                        Entry / Exit COMPLETE                                                      test_entry_exit_pair_summary.csv
+ 11                          Dwell time COMPLETE                                                                dwell_pair_summary.csv
+ 12        Zone-to-zone flow transition COMPLETE                                                      flow_transition_pair_summary.csv
+
+CONFIGURATION SCORECARD
+-----------------------
+  pair  Baseline_Occupancy_MAE  Baseline_Ground_F1  Baseline_Ground_Recall  Baseline_Ground_MAE_cm  Joint_Failure_Lift  Tracking_IDF1  Tracking_MOTA  Tracking_ID_Switches  EntryExit_F1  Dwell_Visit_F1  Dwell_MAE_seconds  Dwell_Matched_Visits  Flow_Event_F1  Flow_Count_WAPE  Flow_Distribution_TV  Temporal_Flow_WAPE
+Pair12                   5.075              0.7591                  0.6642                 25.7281              4.1481         0.4684         0.5386                    64        0.6875          0.2727                0.5                     3         0.6875           0.2000                0.0686              0.5333
+Pair34                   5.825              0.4706                  0.4030                 41.1308              4.4444         0.3101         0.0609                    52        0.3636          0.0000                NaN                     0         0.2727           0.5333                0.3333              0.8000
+Pair56                   4.650              0.6931                  0.6138                 26.6906              4.6753         0.3848         0.3856                   114        0.5000          0.1481                0.5                     2         0.4062           0.7333                0.3039              1.2000
+
+KEY FINDINGS
+------------
+                                criterion                 metric best_pair  value
+        Best baseline ground-detection F1     Baseline_Ground_F1    Pair12 0.7591
+            Lowest baseline occupancy MAE Baseline_Occupancy_MAE    Pair56 4.6500
+          Best global identity continuity          Tracking_IDF1    Pair12 0.4684
+           Best Entry/Exit event recovery           EntryExit_F1    Pair12 0.6875
+             Best complete-visit recovery         Dwell_Visit_F1    Pair12 0.2727
+        Best directed flow-event recovery          Flow_Event_F1    Pair12 0.6875
+Lowest aggregate directed-flow count WAPE        Flow_Count_WAPE    Pair12 0.2000
+      Closest flow-direction distribution   Flow_Distribution_TV    Pair12 0.0686
+
+FINAL SCIENTIFIC CAUTIONS
+-------------------------
+1. Synchronization ±1.5s is exploratory only and excluded from the primary final protocol.
+2. Ground localization MAE is conditional on successful matches and must be interpreted with Recall/F1.
+3. Dwell MAE is conditional on matched complete visits; Visit Recall/F1 must accompany the error metric.
+4. Total transition count can appear accurate while directed flow composition is incorrect; flow matrix metrics are required.
+5. WILDTRACK Zone A/B/C are generic spatial regions and must not be labeled as airport functional areas.

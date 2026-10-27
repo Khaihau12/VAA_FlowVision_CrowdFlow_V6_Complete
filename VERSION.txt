@@ -1,0 +1,7 @@
+VAA FlowVision CrowdFlow Research App V6.0 Complete
+Detection + Tracking + Ground-plane + Multi-camera Fusion
+Occupancy + Entry/Exit + Dwell + Directed Flow
+Forecast + SQLite + Decision Support
+Person Trajectory Anomaly + Crowd Anomaly + Incident Queue
+Validation scripts V2/V3/V4/V5/V6 included
+2026-09-30

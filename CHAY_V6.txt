@@ -1,0 +1,13 @@
+CÁCH CHẠY VAA FLOWVISION CROWD FLOW V6
+
+1. Mở PowerShell/CMD trong thư mục project.
+2. Chạy:
+
+python -m pip install -r requirements.txt
+python check_gpu.py
+python validate_v6.py
+python -m streamlit run app.py
+
+3. Mở http://localhost:8501
+
+Nếu Windows chặn file .bat, dùng các lệnh trên. Không cần tắt Smart App Control.

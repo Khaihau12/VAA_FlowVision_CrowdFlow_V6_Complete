@@ -1,0 +1,7 @@
+# Ví dụ nếu nhóm chọn annotation đầu người cho dense crowd.
+path: D:/CrowdFlowHeadDataset
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: head

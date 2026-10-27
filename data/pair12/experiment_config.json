@@ -1,0 +1,30 @@
+{
+  "session": "SESSION_1_PAIR_12",
+  "camera_pair": [
+    "Cam1",
+    "Cam2"
+  ],
+  "calibration_mapping": {
+    "Cam1": "CVLab1",
+    "Cam2": "CVLab2"
+  },
+  "view_mapping": {
+    "Cam1": 0,
+    "Cam2": 1
+  },
+  "device": "CPU",
+  "model": "yolo11n.pt",
+  "model_training": "pretrained; no WILDTRACK fine-tuning",
+  "tracker": "ByteTrack",
+  "confidence_threshold": 0.25,
+  "image_size": 512,
+  "tracking_target_fps": 10,
+  "fusion_threshold_cm": 100.0,
+  "evaluation_threshold_cm": 100.0,
+  "split": {
+    "development": 240,
+    "validation": 80,
+    "held_out_test": 80
+  },
+  "seed": 42
+}

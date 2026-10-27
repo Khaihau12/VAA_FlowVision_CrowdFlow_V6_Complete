@@ -1,0 +1,15 @@
+# Sửa path thành thư mục dataset của bạn.
+# Cấu trúc YOLO gợi ý:
+# dataset/
+#   images/train
+#   images/val
+#   images/test
+#   labels/train
+#   labels/val
+#   labels/test
+path: D:/CrowdFlowDataset
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: person

@@ -1,0 +1,13 @@
+id,experiment,status,primary_source
+1,Single / Multi-camera baseline,COMPLETE,final_system_performance.csv
+2,Controlled camera-error correlation,COMPLETE,/kaggle/working/CONTROLLED_ERROR_CORRELATION/controlled_error_correlation_summary.csv
+3,Camera observation dropout,COMPLETE,/kaggle/working/FRAME_DROP_ROBUSTNESS/frame_drop_seed_results.csv
+4,Synchronization shift,COMPLETE,/kaggle/working/SYNC_SHIFT_ROBUSTNESS/sync_shift_results.csv
+5,Controlled detection loss,COMPLETE,/kaggle/working/DETECTION_LOSS_ROBUSTNESS/detection_loss_seed_results.csv
+6,Robustness master,COMPLETE,rebuilt from raw robustness experiments
+7,Fusion-method comparison,COMPLETE,/kaggle/working/FUSION_METHOD_COMPARISON/fusion_paper_ready_table.csv
+8,Zone analysis / occupancy,COMPLETE,zone_occupancy_summary.csv
+9,Global temporal ground tracking,COMPLETE,test_tracking_metrics.csv
+10,Entry / Exit,COMPLETE,test_entry_exit_pair_summary.csv
+11,Dwell time,COMPLETE,dwell_pair_summary.csv
+12,Zone-to-zone flow transition,COMPLETE,flow_transition_pair_summary.csv

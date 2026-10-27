@@ -1,0 +1,9 @@
+criterion,metric,best_pair,value
+Best baseline ground-detection F1,Baseline_Ground_F1,Pair12,0.7590618336886993
+Lowest baseline occupancy MAE,Baseline_Occupancy_MAE,Pair56,4.65
+Best global identity continuity,Tracking_IDF1,Pair12,0.4683724235963042
+Best Entry/Exit event recovery,EntryExit_F1,Pair12,0.6875
+Best complete-visit recovery,Dwell_Visit_F1,Pair12,0.2727272727272727
+Best directed flow-event recovery,Flow_Event_F1,Pair12,0.6875
+Lowest aggregate directed-flow count WAPE,Flow_Count_WAPE,Pair12,0.2
+Closest flow-direction distribution,Flow_Distribution_TV,Pair12,0.0686274509803921

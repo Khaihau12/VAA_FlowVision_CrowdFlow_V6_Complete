@@ -1,0 +1,55 @@
+VAA FlowVision CrowdFlow V6 - Validation Report
+Date: 2026-09-30
+
+[PASS] Python compile: app.py + src/*.py
+
+### validate_research_data.py
+GT mean occupancy: {'Zone A': 7.575, 'Zone B': 10.775, 'Zone C': 1.75}
+Pred mean occupancy: {'Zone A': 5.1125, 'Zone B': 8.55, 'Zone C': 1.4125}
+Pair12 key metrics: OK
+REPRODUCIBILITY CHECK: PASS
+
+### validate_v2.py
+V2 VALIDATION: PASS
+Bundled model: yolo11n.pt (5.35 MB)
+Calibrations: 7 cameras
+Synthetic Hungarian match distance: 50.0 cm
+
+### validate_v3.py
+KIỂM TRA V3: ĐẠT
+- Mã nguồn: hợp lệ
+- YOLO11n: có sẵn
+- 7 bộ hiệu chuẩn: có sẵn
+- Đọc ảnh: đạt
+- Khởi tạo phiên CCTV/RTSP: đạt
+
+### validate_v4.py
+KIỂM TRA V4: ĐẠT
+- File bắt buộc: 6
+- Bản ghi mô phỏng kiểm thử: 123
+- Dự báo: 3 khu × 3 tầm 5/10/15 phút = đạt
+- Backtest MAE/RMSE/WAPE: đạt
+- SQLite ghi/đọc/xóa: đạt
+
+### validate_v5.py
+KIỂM TRA V5: ĐẠT
+  - ROI mapping: ĐẠT
+  - tiled inference: 12 tile trong test 1536x2048
+  - global NMS: ĐẠT
+  - mặc định detector: conf=0.15, imgsz=1280, max_det=1000
+  - realtime target mặc định: 15.0 FPS
+  - capture worker + AI worker độc lập: ĐẠT
+
+### validate_v6.py
+[OK] Detect loitering episode
+[OK] Detect restricted-zone presence
+[OK] Detect configured wrong-way transition
+[OK] Detect abnormal ground-plane speed
+[OK] Detect configured over-capacity
+[OK] Detect rapid crowd surge
+[OK] Build prioritized incident queue
+[OK] Persist anomaly alerts
+[OK] De-duplicate identical anomaly alerts
+[OK] Read persisted anomaly alerts
+
+V6 validation passed.

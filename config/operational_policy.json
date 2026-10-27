@@ -1,0 +1,26 @@
+{
+  "version": "V6.0",
+  "note": "Các ngưỡng là cấu hình nghiên cứu/decision-support và phải được hiệu chỉnh, xác thực trên dữ liệu VAA-2Cam trước khi dùng vận hành thực tế.",
+  "capacity": {
+    "Zone A": 10,
+    "Zone B": 12,
+    "Zone C": 4
+  },
+  "crowd": {
+    "busy_threshold": 0.65,
+    "congested_threshold": 0.85,
+    "surge_people": 4,
+    "surge_window_points": 5,
+    "persistent_points": 4
+  },
+  "trajectory": {
+    "loitering_sec": 120,
+    "speed_threshold_cm_s": 250,
+    "max_gap_sec": 2.0,
+    "abrupt_turn_deg": 150,
+    "abrupt_turn_min_step_cm": 50,
+    "detect_abrupt_turn": false,
+    "restricted_zones": [],
+    "forbidden_transitions": []
+  }
+}
